@@ -3877,5 +3877,223 @@
     "protein": 10,
     "carbs": 50,
     "fat": 15
+  },
+  [
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "ข้าวผัดหมู + ไข่ดาว",
+    "calories": 700,
+    "protein": 28,
+    "carbs": 88,
+    "fat": 22
+  },
+  {
+    "category": "clean",
+    "type": "breakfast",
+    "name": "ข้าวต้มกุ้ง + ปาท่องโก๋",
+    "calories": 650,
+    "protein": 26,
+    "carbs": 85,
+    "fat": 18
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "แซนด์วิชทูน่า + ชีส + นม",
+    "calories": 720,
+    "protein": 32,
+    "carbs": 82,
+    "fat": 20
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "ออมเล็ตผักรวม + มันฝรั่งอบ",
+    "calories": 680,
+    "protein": 24,
+    "carbs": 70,
+    "fat": 24
+  },
+  {
+    "category": "clean",
+    "type": "breakfast",
+    "name": "ข้าวเหนียวไก่ทอด + นมจืด",
+    "calories": 730,
+    "protein": 30,
+    "carbs": 90,
+    "fat": 25
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวหมูกระเทียม + ไข่ดาว",
+    "calories": 800,
+    "protein": 35,
+    "carbs": 90,
+    "fat": 28
+  },
+  {
+    "category": "clean",
+    "type": "lunch",
+    "name": "ก๋วยเตี๋ยวเรือหมูตุ๋นพิเศษ",
+    "calories": 780,
+    "protein": 32,
+    "carbs": 95,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวราดแกงเผ็ดเป็ดย่าง + ไข่เค็ม",
+    "calories": 850,
+    "protein": 36,
+    "carbs": 100,
+    "fat": 30
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวหน้าปลาแซลมอนย่างซีอิ๊ว",
+    "calories": 790,
+    "protein": 38,
+    "carbs": 85,
+    "fat": 26
+  },
+  {
+    "category": "clean",
+    "type": "lunch",
+    "name": "บะหมี่หมูแดงเกี๊ยว + น้ำซุป",
+    "calories": 770,
+    "protein": 34,
+    "carbs": 92,
+    "fat": 24
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวหน้าไก่เทอริยากิ",
+    "calories": 760,
+    "protein": 33,
+    "carbs": 88,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ข้าวปลาทอดราดซอสกระเทียมพริกไทย",
+    "calories": 820,
+    "protein": 36,
+    "carbs": 95,
+    "fat": 28
+  },
+  {
+    "category": "clean",
+    "type": "dinner",
+    "name": "สปาเกตตีคาโบนาร่า",
+    "calories": 850,
+    "protein": 32,
+    "carbs": 98,
+    "fat": 32
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "แกงมัสมั่นไก่ + ข้าวสวย",
+    "calories": 880,
+    "protein": 34,
+    "carbs": 102,
+    "fat": 34
+  },
+  {
+    "category": "clean",
+    "type": "dinner",
+    "name": "ราดหน้าหมี่กรอบทะเล",
+    "calories": 810,
+    "protein": 30,
+    "carbs": 100,
+    "fat": 26
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ข้าวผัดแกงเขียวหวานไก่",
+    "calories": 790,
+    "protein": 34,
+    "carbs": 96,
+    "fat": 28
+  },
+  {
+    "category": "clean",
+    "type": "dinner",
+    "name": "ก๋วยเตี๋ยวคั่วไก่ + ไข่ดาว",
+    "calories": 770,
+    "protein": 33,
+    "carbs": 92,
+    "fat": 24
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "ข้าวโพดอบเนย",
+    "calories": 350,
+    "protein": 8,
+    "carbs": 55,
+    "fat": 10
+  },
+  {
+    "category": "clean",
+    "type": "snack",
+    "name": "เค้กกล้วยหอม + นมจืด",
+    "calories": 380,
+    "protein": 9,
+    "carbs": 50,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "กราโนล่าบาร์ + โยเกิร์ต",
+    "calories": 320,
+    "protein": 10,
+    "carbs": 46,
+    "fat": 8
+  },
+  {
+    "category": "clean",
+    "type": "snack",
+    "name": "นมเปรี้ยว + ขนมปังกรอบ",
+    "calories": 360,
+    "protein": 8,
+    "carbs": 52,
+    "fat": 11
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "สมูทตี้อะโวคาโด + นมสด",
+    "calories": 400,
+    "protein": 12,
+    "carbs": 48,
+    "fat": 14
+  },
+  {
+    "category": "clean",
+    "type": "snack",
+    "name": "พุดดิ้งนมสด + คุกกี้โอ๊ต",
+    "calories": 370,
+    "protein": 10,
+    "carbs": 50,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "ชีสสติ๊ก + น้ำผลไม้",
+    "calories": 340,
+    "protein": 12,
+    "carbs": 40,
+    "fat": 10
   }
+]
 ]
