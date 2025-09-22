@@ -1,0 +1,403 @@
+[
+  {
+    "category": "clean",
+    "name": "ข้าวกล้อง + อกไก่ย่าง + ผักลวก",
+    "calories": 420,
+    "protein": 40,
+    "carbs": 45,
+    "fat": 8
+  },
+  {
+    "category": "clean",
+    "name": "สลัดผัก + ไข่ต้ม 2 ฟอง",
+    "calories": 280,
+    "protein": 18,
+    "carbs": 20,
+    "fat": 10
+  },
+  {
+    "category": "clean",
+    "name": "ข้าวโอ๊ต + กล้วย + นม low-fat",
+    "calories": 350,
+    "protein": 12,
+    "carbs": 60,
+    "fat": 5
+  },
+  {
+    "category": "clean",
+    "name": "สเต็กปลาแซลมอน + มันหวาน + ผักนึ่ง",
+    "calories": 480,
+    "protein": 38,
+    "carbs": 35,
+    "fat": 15
+  },
+  {
+    "category": "clean",
+    "name": "โยเกิร์ตไขมันต่ำ + ธัญพืช",
+    "calories": 200,
+    "protein": 10,
+    "carbs": 30,
+    "fat": 4
+  },
+  {
+    "category": "clean",
+    "name": "อกไก่นึ่ง + มันฝรั่งต้ม + ผักสลัด",
+    "calories": 400,
+    "protein": 36,
+    "carbs": 40,
+    "fat": 6
+  },
+  {
+    "category": "clean",
+    "name": "ไข่ขาวต้ม 5 ฟอง + ผักต้ม",
+    "calories": 180,
+    "protein": 20,
+    "carbs": 8,
+    "fat": 2
+  },
+  {
+    "category": "clean",
+    "name": "โจ๊กข้าวโอ๊ต + อกไก่สับ + ต้นหอม",
+    "calories": 300,
+    "protein": 22,
+    "carbs": 40,
+    "fat": 5
+  },
+  {
+    "category": "clean",
+    "name": "สมูทตี้ผักโขม + กล้วย + เวย์โปรตีน",
+    "calories": 250,
+    "protein": 22,
+    "carbs": 30,
+    "fat": 3
+  },
+  {
+    "category": "clean",
+    "name": "ข้าวกล้อง + ปลาย่างเกลือ + สลัดแตงกวา",
+    "calories": 380,
+    "protein": 34,
+    "carbs": 40,
+    "fat": 7
+  },
+  {
+    "category": "clean",
+    "name": "สลัดไก่ย่าง + น้ำสลัดงาญี่ปุ่นแบบ low-fat",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 25,
+    "fat": 8
+  },
+  {
+    "category": "clean",
+    "name": "ผัดบรอกโคลีใส่อกไก่ (ใช้น้ำมันมะกอกน้อย)",
+    "calories": 300,
+    "protein": 26,
+    "carbs": 20,
+    "fat": 9
+  },
+  {
+    "category": "clean",
+    "name": "มันเทศอบ + อกไก่ย่าง + แอปเปิ้ลเขียว",
+    "calories": 370,
+    "protein": 30,
+    "carbs": 50,
+    "fat": 5
+  },
+  {
+    "category": "clean",
+    "name": "ซุปฟักทอง + ขนมปังโฮลวีท 1 แผ่น",
+    "calories": 250,
+    "protein": 10,
+    "carbs": 40,
+    "fat": 4
+  },
+  {
+    "category": "clean",
+    "name": "ไข่เจียวขาวใส่ผักรวม (ใช้น้ำมันน้อย)",
+    "calories": 200,
+    "protein": 18,
+    "carbs": 10,
+    "fat": 6
+  },
+  {
+    "category": "clean",
+    "name": "ไก่อบสมุนไพร + สลัดผัก",
+    "calories": 330,
+    "protein": 34,
+    "carbs": 25,
+    "fat": 9
+  },
+  {
+    "category": "clean",
+    "name": "สลัดทูน่า + ขนมปังโฮลวีท",
+    "calories": 280,
+    "protein": 24,
+    "carbs": 30,
+    "fat": 6
+  },
+  {
+    "category": "clean",
+    "name": "แกงจืดเต้าหู้หมูสับ (ไม่ใส่น้ำมัน)",
+    "calories": 240,
+    "protein": 20,
+    "carbs": 15,
+    "fat": 8
+  },
+  {
+    "category": "clean",
+    "name": "อกไก่ย่าง + ควินัว + สลัดผัก",
+    "calories": 390,
+    "protein": 38,
+    "carbs": 40,
+    "fat": 7
+  },
+  {
+    "category": "clean",
+    "name": "สมูทตี้เบอร์รี + โปรตีนผง",
+    "calories": 210,
+    "protein": 20,
+    "carbs": 25,
+    "fat": 3
+  },
+  {
+    "category": "clean",
+    "name": "สลัดไข่ต้ม + ข้าวโพดต้ม",
+    "calories": 260,
+    "protein": 14,
+    "carbs": 35,
+    "fat": 7
+  },
+  {
+    "category": "clean",
+    "name": "ต้มยำไก่น้ำใส (ไม่ใส่น้ำมัน)",
+    "calories": 200,
+    "protein": 22,
+    "carbs": 8,
+    "fat": 4
+  },
+  {
+    "category": "clean",
+    "name": "ข้าวกล้อง + ไข่ตุ๋น + ปลานึ่ง",
+    "calories": 360,
+    "protein": 28,
+    "carbs": 40,
+    "fat": 6
+  },
+  {
+    "category": "clean",
+    "name": "สลัดกุ้งลวก + น้ำสลัดใส",
+    "calories": 280,
+    "protein": 26,
+    "carbs": 18,
+    "fat": 7
+  },
+  {
+    "category": "clean",
+    "name": "ไข่ต้ม + แอปเปิ้ล + ถั่วอัลมอนด์",
+    "calories": 320,
+    "protein": 15,
+    "carbs": 25,
+    "fat": 15
+  },
+
+  {
+    "category": "healthy",
+    "name": "ก๋วยเตี๋ยวต้มยำ",
+    "calories": 480,
+    "protein": 25,
+    "carbs": 65,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "name": "ข้าวต้มปลา",
+    "calories": 350,
+    "protein": 22,
+    "carbs": 50,
+    "fat": 6
+  },
+  {
+    "category": "healthy",
+    "name": "ต้มยำกุ้งน้ำใส",
+    "calories": 320,
+    "protein": 20,
+    "carbs": 25,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "name": "ผัดผักรวม + หมูไม่ติดมัน",
+    "calories": 420,
+    "protein": 28,
+    "carbs": 45,
+    "fat": 14
+  },
+  {
+    "category": "healthy",
+    "name": "ข้าวผัดกุ้งใส่น้ำมันน้อย",
+    "calories": 520,
+    "protein": 25,
+    "carbs": 65,
+    "fat": 16
+  },
+  {
+    "category": "healthy",
+    "name": "ยำวุ้นเส้นหมูสับ",
+    "calories": 360,
+    "protein": 20,
+    "carbs": 45,
+    "fat": 9
+  },
+  {
+    "category": "healthy",
+    "name": "ส้มตำไทย + ไก่ย่าง",
+    "calories": 400,
+    "protein": 28,
+    "carbs": 40,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "name": "แกงส้มชะอมกุ้ง",
+    "calories": 380,
+    "protein": 24,
+    "carbs": 35,
+    "fat": 10
+  },
+  {
+    "category": "healthy",
+    "name": "แกงเขียวหวานไก่ (ใส่น้ำกะทิน้อย)",
+    "calories": 520,
+    "protein": 26,
+    "carbs": 35,
+    "fat": 20
+  },
+  {
+    "category": "healthy",
+    "name": "ข้าวราดแกงเผ็ดเป็ดย่าง",
+    "calories": 600,
+    "protein": 30,
+    "carbs": 65,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "name": "สปาเกตตีซอสมะเขือเทศ + ไก่",
+    "calories": 500,
+    "protein": 28,
+    "carbs": 70,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "name": "ซุปไก่มันฝรั่ง + แครอท",
+    "calories": 420,
+    "protein": 25,
+    "carbs": 45,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "name": "แกงเลียงผักรวม + กุ้ง",
+    "calories": 300,
+    "protein": 22,
+    "carbs": 20,
+    "fat": 8
+  },
+  {
+    "category": "healthy",
+    "name": "ยำสาหร่ายญี่ปุ่น + เต้าหู้",
+    "calories": 280,
+    "protein": 18,
+    "carbs": 25,
+    "fat": 9
+  },
+  {
+    "category": "healthy",
+    "name": "สุกี้น้ำรวมมิตร",
+    "calories": 450,
+    "protein": 30,
+    "carbs": 40,
+    "fat": 15
+  },
+  {
+    "category": "healthy",
+    "name": "แซนด์วิชโฮลวีท + ไข่ต้ม + ผักสด",
+    "calories": 380,
+    "protein": 20,
+    "carbs": 45,
+    "fat": 11
+  },
+  {
+    "category": "healthy",
+    "name": "ข้าวกล้อง + แกงส้มปลา + ผักต้ม",
+    "calories": 420,
+    "protein": 28,
+    "carbs": 50,
+    "fat": 9
+  },
+  {
+    "category": "healthy",
+    "name": "ต้มจืดสาหร่ายหมูสับ",
+    "calories": 320,
+    "protein": 20,
+    "carbs": 20,
+    "fat": 10
+  },
+  {
+    "category": "healthy",
+    "name": "ผัดไทยกุ้งสด (ใช้น้ำมันน้อย)",
+    "calories": 540,
+    "protein": 30,
+    "carbs": 65,
+    "fat": 16
+  },
+  {
+    "category": "healthy",
+    "name": "สลัดอกไก่ + มะเขือเทศ + ข้าวโพด",
+    "calories": 350,
+    "protein": 28,
+    "carbs": 35,
+    "fat": 9
+  },
+  {
+    "category": "healthy",
+    "name": "ข้าวเหนียวหมูย่าง (หมูไม่ติดมัน)",
+    "calories": 480,
+    "protein": 25,
+    "carbs": 55,
+    "fat": 15
+  },
+  {
+    "category": "healthy",
+    "name": "แกงป่าไก่",
+    "calories": 400,
+    "protein": 28,
+    "carbs": 30,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "name": "เกาเหลาน้ำใส + วุ้นเส้น",
+    "calories": 360,
+    "protein": 22,
+    "carbs": 40,
+    "fat": 8
+  },
+  {
+    "category": "healthy",
+    "name": "แกงจืดตำลึงหมูสับ",
+    "calories": 310,
+    "protein": 18,
+    "carbs": 20,
+    "fat": 10
+  },
+  {
+    "category": "healthy",
+    "name": "ยำเห็ดรวมมิตร",
+    "calories": 260,
+    "protein": 12,
+    "carbs": 20,
+    "fat": 8
+  }
+]
