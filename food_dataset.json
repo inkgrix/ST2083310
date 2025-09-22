@@ -4093,5 +4093,140 @@
     "protein": 12,
     "carbs": 40,
     "fat": 10
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "ข้าวโอ๊ตใส่นม + กล้วย + เนยถั่ว",
+    "calories": 720,
+    "protein": 28,
+    "carbs": 85,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "แซนด์วิชโฮลวีตไก่งวง + ชีส + ไข่ต้ม",
+    "calories": 750,
+    "protein": 32,
+    "carbs": 80,
+    "fat": 25
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "โจ๊กข้าวกล้องอกไก่ + ไข่ลวก + อัลมอนด์โรยหน้า",
+    "calories": 700,
+    "protein": 30,
+    "carbs": 82,
+    "fat": 20
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวกล้อง + อกไก่ผัดพริกไทยดำ + อโวคาโด",
+    "calories": 780,
+    "protein": 38,
+    "carbs": 85,
+    "fat": 24
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "สปาเกตตีโฮลวีตซอสไก่ + สลัดน้ำมันมะกอก",
+    "calories": 800,
+    "protein": 34,
+    "carbs": 90,
+    "fat": 26
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวกล้อง + ปลาแซลมอนย่าง + ผักย่าง",
+    "calories": 820,
+    "protein": 40,
+    "carbs": 88,
+    "fat": 28
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "บะหมี่ไข่ + ไก่อบซอสเทอริยากิ + ไข่ต้ม",
+    "calories": 760,
+    "protein": 36,
+    "carbs": 86,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ข้าวกล้อง + ปลาทูน่า + สลัดควินัว",
+    "calories": 800,
+    "protein": 38,
+    "carbs": 92,
+    "fat": 24
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ก๋วยเตี๋ยวเส้นหมี่ข้าวกล้อง + ไก่ย่าง + ถั่วงอก",
+    "calories": 780,
+    "protein": 34,
+    "carbs": 88,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ข้าวสวย + ไก่ย่างสมุนไพร + ฟักทองนึ่ง + สลัด",
+    "calories": 820,
+    "protein": 37,
+    "carbs": 95,
+    "fat": 26
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ซุปมันฝรั่ง + ขนมปังโฮลวีต + ไก่อบ",
+    "calories": 850,
+    "protein": 35,
+    "carbs": 96,
+    "fat": 28
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "สมูทตี้โปรตีน (เวย์ + กล้วย + นมอัลมอนด์)",
+    "calories": 350,
+    "protein": 25,
+    "carbs": 30,
+    "fat": 8
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "กราโนล่า + โยเกิร์ต + น้ำผึ้ง + เบอร์รี",
+    "calories": 400,
+    "protein": 15,
+    "carbs": 55,
+    "fat": 12
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "ขนมปังโฮลวีต + อโวคาโด + ไข่ต้ม",
+    "calories": 380,
+    "protein": 16,
+    "carbs": 40,
+    "fat": 14
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "ชีส + แอปเปิล + อัลมอนด์",
+    "calories": 360,
+    "protein": 12,
+    "carbs": 38,
+    "fat": 14
   }
 ]
