@@ -3707,7 +3707,7 @@
     "carbs": 36,
     "fat": 12
   },
-   {
+  {
     "category": "healthy",
     "type": "breakfast",
     "name": "ข้าวต้มหมูสับ + ไข่ต้ม",
@@ -3878,7 +3878,6 @@
     "carbs": 50,
     "fat": 15
   },
-  [
   {
     "category": "healthy",
     "type": "breakfast",
@@ -4095,5 +4094,4 @@
     "carbs": 40,
     "fat": 10
   }
-]
 ]
