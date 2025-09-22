@@ -3706,5 +3706,176 @@
     "protein": 14,
     "carbs": 36,
     "fat": 12
+  },
+   {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "ข้าวต้มหมูสับ + ไข่ต้ม",
+    "calories": 650,
+    "protein": 32,
+    "carbs": 70,
+    "fat": 18
+  },
+  {
+    "category": "clean",
+    "type": "breakfast",
+    "name": "แซนด์วิชโฮลวีต + ชีส + แฮม",
+    "calories": 620,
+    "protein": 28,
+    "carbs": 65,
+    "fat": 20
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "แพนเค้กกล้วยหอม + น้ำผึ้ง + อัลมอนด์",
+    "calories": 680,
+    "protein": 20,
+    "carbs": 90,
+    "fat": 22
+  },
+  {
+    "category": "healthy",
+    "type": "breakfast",
+    "name": "โจ๊กหมูใส่ไข่ + ปาท่องโก๋เล็ก",
+    "calories": 700,
+    "protein": 28,
+    "carbs": 95,
+    "fat": 20
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวกะเพราเนื้อ + ไข่ดาว",
+    "calories": 780,
+    "protein": 38,
+    "carbs": 85,
+    "fat": 28
+  },
+  {
+    "category": "clean",
+    "type": "lunch",
+    "name": "ข้าวมันไก่ทอด",
+    "calories": 820,
+    "protein": 35,
+    "carbs": 95,
+    "fat": 30
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ข้าวผัดรวมมิตรทะเล",
+    "calories": 800,
+    "protein": 36,
+    "carbs": 92,
+    "fat": 26
+  },
+  {
+    "category": "healthy",
+    "type": "lunch",
+    "name": "ก๋วยเตี๋ยวต้มยำกุ้ง + ลูกชิ้นปลา",
+    "calories": 750,
+    "protein": 32,
+    "carbs": 88,
+    "fat": 22
+  },
+  {
+    "category": "clean",
+    "type": "lunch",
+    "name": "ข้าวหมูแดงหมูกรอบ + ไข่ต้ม",
+    "calories": 830,
+    "protein": 40,
+    "carbs": 90,
+    "fat": 32
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ข้าวแกงเขียวหวานไก่ + โรตี",
+    "calories": 820,
+    "protein": 34,
+    "carbs": 100,
+    "fat": 28
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "ข้าวผัดกระเพราปลาหมึกไข่เค็ม",
+    "calories": 790,
+    "protein": 36,
+    "carbs": 95,
+    "fat": 25
+  },
+  {
+    "category": "clean",
+    "type": "dinner",
+    "name": "ผัดไทยกุ้งสด",
+    "calories": 780,
+    "protein": 34,
+    "carbs": 92,
+    "fat": 24
+  },
+  {
+    "category": "healthy",
+    "type": "dinner",
+    "name": "แกงส้มชะอมกุ้ง + ข้าวสวย",
+    "calories": 760,
+    "protein": 30,
+    "carbs": 88,
+    "fat": 22
+  },
+  {
+    "category": "clean",
+    "type": "dinner",
+    "name": "สปาเกตตีโบโลเนส",
+    "calories": 800,
+    "protein": 35,
+    "carbs": 95,
+    "fat": 27
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "ขนมปังโฮลวีต + เนยถั่ว + กล้วยหอม",
+    "calories": 350,
+    "protein": 12,
+    "carbs": 45,
+    "fat": 12
+  },
+  {
+    "category": "clean",
+    "type": "snack",
+    "name": "โยเกิร์ต + กราโนล่า + น้ำผึ้ง",
+    "calories": 320,
+    "protein": 10,
+    "carbs": 42,
+    "fat": 10
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "นมถั่วเหลือง + ถั่วอัลมอนด์",
+    "calories": 300,
+    "protein": 14,
+    "carbs": 28,
+    "fat": 12
+  },
+  {
+    "category": "clean",
+    "type": "snack",
+    "name": "สมูทตี้สตรอว์เบอร์รี + กล้วย + นม",
+    "calories": 340,
+    "protein": 12,
+    "carbs": 55,
+    "fat": 8
+  },
+  {
+    "category": "healthy",
+    "type": "snack",
+    "name": "มันฝรั่งอบชีส",
+    "calories": 380,
+    "protein": 10,
+    "carbs": 50,
+    "fat": 15
   }
 ]
