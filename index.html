@@ -33,7 +33,7 @@
         <!-- Title Section -->
         <div class="text-center mb-8 md:mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">HealthyLife AI</h1>
-            <p class="mt-2 text-gray-600 max-w-xl mx-auto">คำนวณ BMI & TDEE พร้อมแนะนำอาหาร</p>
+            <p class="mt-2 text-gray-600 max-w-xl mx-auto">คำนวณ BMI & TDEE พร้อมแนะนำอาหารอัจฉริยะ</p>
         </div>
 
         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -85,16 +85,32 @@
             <!-- Right Column: Meals -->
             <div class="bg-white p-6 md:p-8 rounded-[20px] shadow-lg space-y-6">
                  <h2 class="text-2xl font-bold text-center text-gray-800">เมนูอาหารแนะนำ</h2>
+                
+                <div id="goal-container" class="hidden">
+                    <label for="goal" class="block text-sm font-medium text-gray-700">เป้าหมายของคุณ</label>
+                    <select id="goal" class="mt-1 w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-[#6EBB9B] focus:border-[#6EBB9B] transition">
+                        <option value="maintain">คงน้ำหนัก</option>
+                        <option value="lose">ลดน้ำหนัก (ลด ~400 kcal)</option>
+                        <option value="gain">เพิ่มน้ำหนัก/กล้ามเนื้อ (เพิ่ม ~350 kcal)</option>
+                    </select>
+                </div>
+
                 <div class="flex justify-center gap-2 bg-gray-100 p-1 rounded-lg">
                     <button id="mode-healthy" class="w-full py-2 px-4 rounded-md font-semibold transition active-mode">เฮลตี้</button>
                     <button id="mode-clean" class="w-full py-2 px-4 rounded-md font-semibold transition text-gray-600">คลีน</button>
                 </div>
                 
                 <div id="meals-container" class="space-y-4">
-                    <div id="loader" class="text-center py-10">กำลังโหลดเมนูอาหาร...</div>
+                    <div id="initial-message" class="text-center py-10 text-gray-500">
+                        <p>คำนวณค่า TDEE ของคุณก่อน<br>เพื่อรับคำแนะนำเมนูอาหาร</p>
+                    </div>
+                    <div id="loader" class="hidden text-center py-10">กำลังโหลดเมนูอาหาร...</div>
                     <div id="error-message" class="hidden text-center text-red-500 py-10"></div>
                     <div id="meal-cards-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <!-- Meal cards will be inserted here by JavaScript -->
+                    </div>
+                     <div id="total-calories-container" class="hidden text-center bg-gray-100 p-3 rounded-lg mt-4">
+                        <p id="total-calories-text" class="font-bold text-gray-700"></p>
                     </div>
                     <button id="shuffle-btn" class="hidden w-full bg-white border-2 border-[#6EBB9B] text-[#6EBB9B] font-bold py-3 px-4 rounded-lg hover:bg-[#6EBB9B] hover:text-white transition duration-300">สุ่มเมนูใหม่</button>
                 </div>
@@ -109,7 +125,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- CONFIGURATION ---
-            const MEALS_JSON_URL = 'https://gist.githubusercontent.com/Anu-m/58b8e19d162d1847f0d2b273d62323f7/raw/266221516e14923e327a3c3b17c72f4410041d6b/meals.json';
+            const MEALS_JSON_URL = 'https://raw.githubusercontent.com/inkgrix/ST2083310/main/food_dataset.json';
 
             // --- DOM ELEMENTS ---
             const calcForm = document.getElementById('calc-form');
@@ -118,86 +134,104 @@
             const bmrResultEl = document.getElementById('bmr-result');
             const tdeeResultEl = document.getElementById('tdee-result');
             
+            const goalContainer = document.getElementById('goal-container');
+            const goalSelect = document.getElementById('goal');
+            
             const modeHealthyBtn = document.getElementById('mode-healthy');
             const modeCleanBtn = document.getElementById('mode-clean');
             const shuffleBtn = document.getElementById('shuffle-btn');
             
+            const initialMessage = document.getElementById('initial-message');
             const loader = document.getElementById('loader');
             const errorMessage = document.getElementById('error-message');
             const mealCardsGrid = document.getElementById('meal-cards-grid');
+            const totalCaloriesContainer = document.getElementById('total-calories-container');
+            const totalCaloriesText = document.getElementById('total-calories-text');
 
             // --- STATE ---
             let allMeals = [];
             let currentMealMode = 'healthy';
+            let calculatedTDEE = null;
+            let targetCalories = null;
+            let currentlyDisplayedMeals = {};
 
             // --- MEAL CARD TEMPLATE ---
             const createMealCardHTML = (emoji, type, meal) => {
                 if (!meal) {
-                    return `
-                        <div class="bg-[#F6EDE3] p-4 rounded-[20px] text-center flex flex-col justify-center items-center h-48">
-                            <span class="text-4xl">${emoji}</span>
-                            <h4 class="font-bold mt-1">${type}</h4>
-                            <p class="text-gray-500 text-sm mt-2">ไม่มีเมนูที่แนะนำ</p>
-                        </div>
-                    `;
+                    return `<div class="bg-[#F6EDE3] p-4 rounded-[20px] text-center flex flex-col justify-center items-center h-48"><span class="text-4xl">${emoji}</span><h4 class="font-bold mt-1">${type}</h4><p class="text-gray-500 text-sm mt-2">ไม่มีเมนูในหมวดนี้</p></div>`;
                 }
-                return `
-                    <div class="bg-[#F6EDE3] p-4 rounded-[20px] text-center h-48 flex flex-col">
-                        <span class="text-4xl">${emoji}</span>
-                        <h4 class="font-bold mt-1">${type}</h4>
-                        <p class="text-gray-800 text-sm font-medium mt-2 flex-grow">${meal.name}</p>
-                        <div class="text-xs text-gray-500 grid grid-cols-2 gap-x-2">
-                            <span>🔥 ${meal.calories} kcal</span>
-                            <span>💪 ${meal.protein}g P</span>
-                            <span>🌾 ${meal.carbs}g C</span>
-                            <span>🥑 ${meal.fat}g F</span>
-                        </div>
-                    </div>
-                `;
+                return `<div class="bg-[#F6EDE3] p-4 rounded-[20px] text-center h-48 flex flex-col"><span class="text-4xl">${emoji}</span><h4 class="font-bold mt-1">${type}</h4><p class="text-gray-800 text-sm font-medium mt-2 flex-grow">${meal.name}</p><div class="text-xs text-gray-500 grid grid-cols-2 gap-x-2"><span>🔥 ${meal.calories} kcal</span><span>💪 ${meal.protein}g P</span><span>🌾 ${meal.carbs}g C</span><span>🥑 ${meal.fat}g F</span></div></div>`;
             };
             
             // --- FUNCTIONS ---
-            const shuffleAndDisplayMeals = () => {
-                if (allMeals.length === 0) return;
+            const updateTargetCalories = () => {
+                if (!calculatedTDEE) return;
+                const goal = goalSelect.value;
+                switch (goal) {
+                    case 'lose': targetCalories = calculatedTDEE - 400; break;
+                    case 'gain': targetCalories = calculatedTDEE + 350; break;
+                    case 'maintain': default: targetCalories = calculatedTDEE; break;
+                }
+            };
 
-                const filteredMeals = allMeals.filter(meal => meal.category === currentMealMode);
+            const findNewMeal = (mealType, targetCalories, mealToExclude = null) => {
+                const baseCandidates = allMeals.filter(m => m.category === currentMealMode && m.type === mealType);
+                if (baseCandidates.length === 0) return null;
+                if (baseCandidates.length === 1) return baseCandidates[0];
+
+                const mealsToConsider = mealToExclude ? baseCandidates.filter(m => m.name !== mealToExclude.name) : baseCandidates;
+                const finalCandidates = mealsToConsider.length > 0 ? mealsToConsider : baseCandidates;
+
+                const idealRange = finalCandidates.filter(m => m.calories >= targetCalories * 0.9 && m.calories <= targetCalories * 1.1);
+                if (idealRange.length > 0) return idealRange[Math.floor(Math.random() * idealRange.length)];
                 
-                const getMealByType = (type) => {
-                    const typeMeals = filteredMeals.filter(meal => meal.type === type);
-                    return typeMeals.length > 0 ? typeMeals[Math.floor(Math.random() * typeMeals.length)] : null;
+                return finalCandidates.reduce((prev, curr) => Math.abs(curr.calories - targetCalories) < Math.abs(prev.calories - targetCalories) ? curr : prev);
+            };
+
+            const displaySmartMeals = () => {
+                if (!targetCalories || allMeals.length === 0) return;
+
+                const targets = {
+                    breakfast: targetCalories * 0.25,
+                    lunch: targetCalories * 0.30,
+                    dinner: targetCalories * 0.30,
+                    snack: targetCalories * 0.15,
                 };
 
-                const meals = {
-                    breakfast: getMealByType('breakfast'),
-                    lunch: getMealByType('lunch'),
-                    dinner: getMealByType('dinner'),
-                    snack: getMealByType('snack')
+                const newMeals = {
+                    breakfast: findNewMeal('breakfast', targets.breakfast, currentlyDisplayedMeals.breakfast),
+                    lunch: findNewMeal('lunch', targets.lunch, currentlyDisplayedMeals.lunch),
+                    dinner: findNewMeal('dinner', targets.dinner, currentlyDisplayedMeals.dinner),
+                    snack: findNewMeal('snack', targets.snack, currentlyDisplayedMeals.snack),
                 };
+                
+                currentlyDisplayedMeals = newMeals;
+                mealCardsGrid.innerHTML = `${createMealCardHTML('🍳', 'มื้อเช้า', newMeals.breakfast)}${createMealCardHTML('🍲', 'มื้อกลางวัน', newMeals.lunch)}${createMealCardHTML('🥗', 'มื้อเย็น', newMeals.dinner)}${createMealCardHTML('🍌', 'ของว่าง', newMeals.snack)}`;
 
-                mealCardsGrid.innerHTML = `
-                    ${createMealCardHTML('🍳', 'มื้อเช้า', meals.breakfast)}
-                    ${createMealCardHTML('🍲', 'มื้อกลางวัน', meals.lunch)}
-                    ${createMealCardHTML('🥗', 'มื้อเย็น', meals.dinner)}
-                    ${createMealCardHTML('🍌', 'ของว่าง', meals.snack)}
-                `;
+                const totalCalories = Object.values(newMeals).reduce((sum, meal) => sum + (meal ? meal.calories : 0), 0);
+                const goalTextMap = { maintain: 'คงน้ำหนัก', lose: 'ลดน้ำหนัก', gain: 'เพิ่มน้ำหนัก' };
+                totalCaloriesText.textContent = `แคลอรี่รวมจากเมนู: ${totalCalories} / เป้าหมาย: ${Math.round(targetCalories)} kcal (${goalTextMap[goalSelect.value]})`;
+                
+                initialMessage.classList.add('hidden');
+                mealCardsGrid.classList.remove('hidden');
+                shuffleBtn.classList.remove('hidden');
+                totalCaloriesContainer.classList.remove('hidden');
             };
             
             const fetchMeals = async () => {
+                loader.classList.remove('hidden');
+                initialMessage.classList.add('hidden');
                 try {
                     const response = await fetch(MEALS_JSON_URL);
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     allMeals = await response.json();
-                    
-                    loader.classList.add('hidden');
-                    mealCardsGrid.classList.remove('hidden');
-                    shuffleBtn.classList.remove('hidden');
-                    
-                    shuffleAndDisplayMeals();
                 } catch (e) {
                     console.error("Failed to fetch meal data:", e);
-                    loader.classList.add('hidden');
                     errorMessage.textContent = "ไม่สามารถโหลดข้อมูลอาหารได้ โปรดลองอีกครั้งในภายหลัง";
                     errorMessage.classList.remove('hidden');
+                } finally {
+                    loader.classList.add('hidden');
+                    initialMessage.classList.remove('hidden');
                 }
             };
 
@@ -212,7 +246,6 @@
             // --- EVENT LISTENERS ---
             calcForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
                 const gender = document.getElementById('gender').value;
                 const age = parseInt(document.getElementById('age').value);
                 const weight = parseFloat(document.getElementById('weight').value);
@@ -226,38 +259,51 @@
                 
                 const heightInMeters = height / 100;
                 const bmi = weight / (heightInMeters * heightInMeters);
-
-                let bmr;
-                if (gender === 'male') {
-                    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-                } else {
-                    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-                }
-
-                const tdee = bmr * activity;
+                let bmr = (gender === 'male') 
+                    ? (10 * weight + 6.25 * height - 5 * age + 5)
+                    : (10 * weight + 6.25 * height - 5 * age - 161);
+                
+                calculatedTDEE = bmr * activity;
+                goalSelect.value = 'maintain';
+                updateTargetCalories();
 
                 bmiResultEl.innerHTML = `<strong>BMI:</strong> ${bmi.toFixed(1)} ${getBmiCategory(bmi)}`;
                 bmrResultEl.innerHTML = `<strong>BMR:</strong> ${Math.round(bmr)} kcal/วัน`;
-                tdeeResultEl.innerHTML = `<strong>TDEE:</strong> ${Math.round(tdee)} kcal/วัน`;
+                tdeeResultEl.innerHTML = `<strong>TDEE:</strong> ${Math.round(calculatedTDEE)} kcal/วัน`;
                 
                 resultsContainer.classList.remove('hidden');
+                goalContainer.classList.remove('hidden');
+                currentlyDisplayedMeals = {};
+                displaySmartMeals();
             });
             
+            goalSelect.addEventListener('change', () => {
+                updateTargetCalories();
+                currentlyDisplayedMeals = {};
+                displaySmartMeals();
+            });
+
             modeHealthyBtn.addEventListener('click', () => {
+                if (currentMealMode === 'healthy') return;
                 currentMealMode = 'healthy';
                 modeHealthyBtn.classList.add('active-mode');
-                modeCleanBtn.classList.remove('active-mode', 'text-gray-600');
-                shuffleAndDisplayMeals();
+                modeCleanBtn.classList.remove('active-mode');
+                modeCleanBtn.classList.add('text-gray-600');
+                currentlyDisplayedMeals = {};
+                displaySmartMeals();
             });
 
             modeCleanBtn.addEventListener('click', () => {
+                if (currentMealMode === 'clean') return;
                 currentMealMode = 'clean';
                 modeCleanBtn.classList.add('active-mode');
                 modeHealthyBtn.classList.remove('active-mode');
-                shuffleAndDisplayMeals();
+                modeHealthyBtn.classList.add('text-gray-600');
+                currentlyDisplayedMeals = {};
+                displaySmartMeals();
             });
             
-            shuffleBtn.addEventListener('click', shuffleAndDisplayMeals);
+            shuffleBtn.addEventListener('click', displaySmartMeals);
 
             // --- INITIALIZATION ---
             fetchMeals();
